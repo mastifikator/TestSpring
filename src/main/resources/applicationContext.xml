@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <util:list id="unitList" value-type="ru.n1k0.testSpringDI.Unit" scope="prototype">
+        <bean class="ru.n1k0.testSpringDI.Orc"
+              scope="prototype"
+              init-method="doBorn"
+              destroy-method="doDeath">
+            <constructor-arg value="Вася"></constructor-arg>
+            <constructor-arg value="5"></constructor-arg>
+            <constructor-arg value="5"></constructor-arg>
+        </bean>
+        <bean class="ru.n1k0.testSpringDI.Human"
+              scope="prototype"
+              init-method="doBorn"
+              destroy-method="doDeath">
+            <constructor-arg value="Святомир"></constructor-arg>
+            <constructor-arg value="4"></constructor-arg>
+            <constructor-arg value="6"></constructor-arg>
+        </bean>
+        <bean class="ru.n1k0.testSpringDI.Undead"
+              scope="prototype"
+              init-method="doBorn"
+              destroy-method="doDeath">
+            <constructor-arg value="Мерзость"></constructor-arg>
+            <constructor-arg value="7"></constructor-arg>
+            <constructor-arg value="3"></constructor-arg>
+        </bean>
+    </util:list>
+
+    <bean id="battle"
+          class="ru.n1k0.testSpringDI.Battle"
+          scope="prototype">
+        <constructor-arg ref="unitList"></constructor-arg>
+        <constructor-arg value="Калимдор"></constructor-arg>
+        <property name="name" value="Калимдор"></property>
+    </bean>
+</beans>
