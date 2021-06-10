@@ -1,6 +1,7 @@
-package ru.n1k0.testSpringDI;
+package ru.n1k0.testSpringNoXML;
 
 public abstract class Unit {
+
     private String name;
     private double strength;
     private double speed;

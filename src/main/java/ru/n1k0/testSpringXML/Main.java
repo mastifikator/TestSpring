@@ -1,4 +1,4 @@
-package ru.n1k0.testSpringDI;
+package ru.n1k0.testSpringXML;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

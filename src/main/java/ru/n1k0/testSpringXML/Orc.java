@@ -1,18 +1,18 @@
-package ru.n1k0.testSpringDI;
+package ru.n1k0.testSpringXML;
 
-public class Undead extends Unit {
-    public Undead(String name, double strength, double speed) {
+public class Orc extends Unit{
+    public Orc(String name, double strength, double speed) {
         super(name, strength, speed);
     }
 
     @Override
     public void doBattleRoar() {
-        System.out.println("За Нерзула!");
+        System.out.println("Лок тар огар!");
     }
 
     @Override
     public void doVictoryRoar() {
-        System.out.println("Хозяин будет доволен!");
+        System.out.println("За орду!");
     }
 
     @Override

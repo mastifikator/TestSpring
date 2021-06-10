@@ -1,18 +1,24 @@
-package ru.n1k0.testSpringDI;
+package ru.n1k0.testSpringAnnotations;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
-public class Human extends Unit{
-    public Human(String name, double strength, double speed) {
+@Component
+@Scope("prototype")
+public class Orc extends Unit {
+
+    public Orc(@Value("Вася")String name, @Value("5")double strength, @Value("5")double speed) {
         super(name, strength, speed);
     }
 
     @Override
     public void doBattleRoar() {
-        System.out.println("Во славу короля!");
+        System.out.println("Лок тар огар!");
     }
 
     @Override
     public void doVictoryRoar() {
-        System.out.println("Во имя света!");
+        System.out.println("За орду!");
     }
 
     @Override
